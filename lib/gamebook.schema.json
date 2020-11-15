@@ -1,0 +1,136 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "GameBook",
+    "description": "A GameBook compatible with LibroGame creator (LGC3)",
+    "type": "object",
+    "properties": {
+        "chapters": {
+            "description": "Array that contains all the chapters of the GameBook",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "number": {
+                        "description": "Chapter number, unique identifier",
+                        "type": "integer",
+                        "minimum": 1
+                    },
+                    "description": {
+                        "description": "Textual content of the chapter",
+                        "type": "string"
+                    },
+                    "flag_fixed": {
+                        "description": "This paragraph is fixed, so it could not be shuffled with the rest of the book",
+                        "type": "boolean"
+                    },
+                    "flag_ending": {
+                        "description": "One of the book's ending",
+                        "type": "boolean"
+                    },
+                    "flag_deadly": {
+                        "description": "One of the book's chapters where the hero will find his death",
+                        "type": "boolean"
+                    },
+                    "chapter_title": {
+                        "description": "Chapter title",
+                        "type": "string"
+                    },
+                    "next_chapters": {
+                        "description": "List of next chapters",
+                        "type": "array",
+                        "items": {
+                            "type": "integer",
+                            "minimum": 1
+                        }
+                    }
+                },
+                "required": [
+                    "number",
+                    "description",
+                    "flag_fixed",
+                    "flag_ending",
+                    "flag_deadly",
+                    "chapter_title",
+                    "next_chapters"
+                ]
+            },
+            "uniqueItems": true
+        },
+        "info": {
+            "description": "Information regarding the GameBook",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "description": "GameBook title",
+                    "type": "string"
+                },
+                "author": {
+                    "description": "GameBook author",
+                    "type": "string"
+                },
+                "lgc_version": {
+                    "description": "Version of LGC used for the creation of the GameBook",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "GameBook version",
+                    "type": "string"
+                },
+                "revision": {
+                    "description": "GameBook revision number",
+                    "type": "integer",
+                    "minimum": 1
+                }
+            },
+            "required": [
+                "title",
+                "author",
+                "lgc_version",
+                "version",
+                "revision"
+            ]
+        },
+        "intro": {
+            "description": "Contains the introduction of the GameBook",
+            "type": "object",
+            "properties": {
+                "chapter_title": {
+                    "description": "Title of the introduction",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Textual content of the introduction",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "chapter_title",
+                "description"
+            ]
+        },
+        "rules": {
+            "description": "Contains the rules of the GameBook",
+            "type": "object",
+            "properties": {
+                "chapter_title": {
+                    "description": "Title of the rules",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Textual content of the rules",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "chapter_title",
+                "description"
+            ]
+        }
+    },
+    "required": [
+        "chapters",
+        "info",
+        "intro",
+        "rules"
+    ]
+}
