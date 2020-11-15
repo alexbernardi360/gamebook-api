@@ -1,0 +1,33 @@
+{
+  "name": "gamebook-api",
+  "version": "1.0.0",
+  "description": "NodeJS module to export and validate a GameBook in .json file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexbernardi360/gamebook-api.git"
+  },
+  "keywords": [
+    "GameBook",
+    "LibroGame",
+    "LGC3",
+    "JSON",
+    "SQLite3"
+  ],
+  "author": "Alessandro Bernardi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexbernardi360/gamebook-api/issues"
+  },
+  "homepage": "https://github.com/alexbernardi360/gamebook-api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "jsonschema": "^1.4.0",
+    "sqlite3": "^5.0.0"
+  }
+}
