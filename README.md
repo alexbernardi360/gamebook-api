@@ -5,13 +5,16 @@
 [![NPM](https://img.shields.io/npm/l/gamebook-api)](LICENSE)
 ![npm](https://img.shields.io/npm/v/gamebook-api)
 
-Node.js module to export and validate a GameBook in .json format.
+Node.js module to export and validate a GameBook in JSON format.
 
 ### Features
-- Convert a GameBook in SQLite3 format ([LGC3]) in JSON format according to the scheme. \
-- Export the GameBook to a .json file. \
-- Get a JSON object from a .json file. \
-- Validate a GameBook in JSON format according to the scheme. \
+- Convert a GameBook in SQLite3 format ([LGC3]) in JSON format according to the scheme.
+- Export the GameBook to a .json file.
+- Get a JSON object from a .json file.
+- Validate a GameBook in JSON format according to the scheme.
+
+### JSON schema for GameBooks
+[gamebook.schema.json](lib/gamebook.schema.json)
 
 ### Installation
 ``` sh
