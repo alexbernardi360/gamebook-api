@@ -1,7 +1,7 @@
 {
   "name": "gamebook-api",
-  "version": "1.0.1",
-  "description": "NodeJS module to export and validate a GameBook in .json file.",
+  "version": "1.0.2",
+  "description": "Module to export and validate a GameBook in .json format.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
