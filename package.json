@@ -4,7 +4,7 @@
   "description": "Module to export and validate a GameBook in .json format.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,9 @@
     "url": "https://github.com/alexbernardi360/gamebook-api/issues"
   },
   "homepage": "https://github.com/alexbernardi360/gamebook-api#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  },
   "dependencies": {
     "jsonschema": "^1.4.0",
     "sqlite3": "^5.0.0"
