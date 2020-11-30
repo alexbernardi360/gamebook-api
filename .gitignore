@@ -2,6 +2,5 @@
 node_modules/
 
 # Development files and folders
-test.js
 test/
 
