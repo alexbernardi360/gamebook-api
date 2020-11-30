@@ -39,7 +39,7 @@ const readJSON = require('gamebook-api').readJSON
 
 function convert(input_path, output_path) {
     // Instantiate the Parser class
-    const parser = new Parser(file_path)
+    const parser = new Parser(input_path)
 
     try {
         // Exporting the object to file
@@ -50,8 +50,12 @@ function convert(input_path, output_path) {
 }
 
 function validateFile(file_path) {
-    let instance = readJSON(file_path)
-    let result = validate(instance)
+    try {
+        let instance = readJSON(file_path)
+        let result = validate(instance)
+    catch (error) {
+        console.log(error)
+    }
     if (result.valid)
         console.log('No error: JSON validated.')
     else {
