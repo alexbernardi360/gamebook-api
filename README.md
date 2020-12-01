@@ -53,7 +53,8 @@ function validateFile(file_path) {
     try {
         let instance = readJSON(file_path)
         let result = validate(instance)
-    catch (error) {
+    } catch (error) {
+        return undefined
         console.log(error)
     }
     if (result.valid)
@@ -62,6 +63,8 @@ function validateFile(file_path) {
         console.log('Error: JSON not validated.')
         console.log(result.errors)
     }
+
+    return result
 }
 ```
 
