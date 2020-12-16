@@ -35,12 +35,98 @@
                         "description": "Chapter title",
                         "type": "string"
                     },
-                    "next_chapters": {
-                        "description": "List of next chapters",
+                    "actions": {
+                        "description": "Array that contains all the possible actions of the chapter to be performed in sequential order",
                         "type": "array",
                         "items": {
-                            "type": "integer",
-                            "minimum": 1
+                            "anyOf": [
+                                {
+                                    "description": "Action that describes a fight",
+                                    "type": "object",
+                                    "properties": {
+                                        "type": {
+                                            "description": "Action type identifier (must be 'fight')",
+                                            "enum": [ "fight" ]
+                                        },
+                                        "adversaryName": {
+                                            "description": "Adversary name",
+                                            "type": "string"
+                                        },
+                                        "adversaryCombativeness": {
+                                            "description": "Adversary combativeness",
+                                            "type": "number"
+                                        },
+                                        "adversaryResistance": {
+                                            "description": "Adversary resistance",
+                                            "type": "number"
+                                        },
+                                        "chapterOnRetreat": {
+                                            "description": "Chapter reachable with retreat from combat",
+                                            "type": "number"
+                                        },
+                                        "chapterOnDefeat": {
+                                            "description": "Chapter reachable with the defeat from combat",
+                                            "type": "number"
+                                        }
+                                    },
+                                    "required": [
+                                        "type",
+                                        "adversaryName",
+                                        "adversaryCombativeness",
+                                        "adversaryResistance"
+                                    ]
+                                },
+                                {
+                                    "description": "Action describing a dice roll and you win if you get a value of at least 'minValueToWin'",
+                                    "type": "object",
+                                    "properties": {
+                                        "type": {
+                                            "description": "Action type identifier (must be 'diceRoll')",
+                                            "enum": [ "diceRoll" ]
+                                        },
+                                        "minValue": {
+                                            "description": "Minimum value of the dice",
+                                            "type": "number"
+                                        },
+                                        "maxValue": {
+                                            "description": "Minimum value of the dice",
+                                            "type": "number"
+                                        },
+                                        "minValueToWin": {
+                                            "description": "Minimum value to win",
+                                            "type": "number"
+                                        }
+                                    },
+                                    "required": [
+                                        "type",
+                                        "minValue",
+                                        "maxValue",
+                                        "minValueToWin"
+                                    ]
+                                },
+                                {
+                                    "description": "Action describing possible following chapters",
+                                    "type": "object",
+                                    "properties": {
+                                        "type": {
+                                            "description": "Action type identifier (must be 'exit')",
+                                            "enum": [ "exit" ]
+                                        },
+                                        "chapters": {
+                                            "description": "List of next chapters",
+                                            "type": "array",
+                                            "items": {
+                                                "type": "integer",
+                                                "minimum": 1
+                                            }
+                                        }
+                                    },
+                                    "required": [
+                                        "type",
+                                        "chapters"
+                                    ]
+                                }
+                            ]
                         }
                     }
                 },
@@ -50,8 +136,7 @@
                     "flag_fixed",
                     "flag_ending",
                     "flag_deadly",
-                    "chapter_title",
-                    "next_chapters"
+                    "chapter_title"
                 ]
             },
             "uniqueItems": true
