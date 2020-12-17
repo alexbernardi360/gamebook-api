@@ -54,19 +54,23 @@
                                         },
                                         "adversaryCombativeness": {
                                             "description": "Adversary combativeness",
-                                            "type": "number"
+                                            "type": "integer",
+                                            "minimum": 1
                                         },
                                         "adversaryResistance": {
                                             "description": "Adversary resistance",
-                                            "type": "number"
+                                            "type": "integer",
+                                            "minimum": 1
                                         },
                                         "chapterOnRetreat": {
                                             "description": "Chapter reachable with retreat from combat",
-                                            "type": "number"
+                                            "type": "integer",
+                                            "minimum": 1
                                         },
                                         "chapterOnDefeat": {
                                             "description": "Chapter reachable with the defeat from combat",
-                                            "type": "number"
+                                            "type": "integer",
+                                            "minimum": 1
                                         }
                                     },
                                     "required": [
@@ -86,15 +90,20 @@
                                         },
                                         "minValue": {
                                             "description": "Minimum value of the dice",
-                                            "type": "number"
+                                            "type": "integer"
                                         },
                                         "maxValue": {
                                             "description": "Minimum value of the dice",
-                                            "type": "number"
+                                            "type": "integer"
                                         },
                                         "minValueToWin": {
                                             "description": "Minimum value to win",
-                                            "type": "number"
+                                            "type": "integer"
+                                        },
+                                        "chapterOnDefeat": {
+                                            "description": "Chapter reached with defeat",
+                                            "type": "integer",
+                                            "minimum": 1
                                         }
                                     },
                                     "required": [
