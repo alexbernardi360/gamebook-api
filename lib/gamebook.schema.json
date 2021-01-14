@@ -36,7 +36,7 @@
                         "type": "string"
                     },
                     "actions": {
-                        "description": "Array that contains all the possible actions of the chapter to be performed in sequential order",
+                        "description": "Array that contains all the possible actions of the chapter to be performed in sequential order, should be empty",
                         "type": "array",
                         "items": {
                             "anyOf": [
@@ -122,7 +122,7 @@
                                             "enum": [ "exit" ]
                                         },
                                         "chapters": {
-                                            "description": "List of next chapters",
+                                            "description": "List of next chapters, it can be empty",
                                             "type": "array",
                                             "items": {
                                                 "type": "integer",
@@ -145,7 +145,8 @@
                     "flag_fixed",
                     "flag_ending",
                     "flag_deadly",
-                    "chapter_title"
+                    "chapter_title",
+                    "actions"
                 ]
             },
             "uniqueItems": true
